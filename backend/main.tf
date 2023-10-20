@@ -1,11 +1,11 @@
-/*terraform {
+terraform {
   #############################################################
   ## APOS EXECUTAR O TERRAFORM  (WITH LOCAL BACKEND)
   ## YOU WILL UNCOMMENT THIS CODE THEN RERUN TERRAFORM INIT
   ## TO SWITCH FROM LOCAL BACKEND TO REMOTE AWS BACKEND
   #############################################################
     backend "s3" {
-      bucket         = "challenge-devops-directive-tf-state"
+      bucket         = "challenge-devops-tf-state"
       key            = "challenge/devops/terraform.tfstate"
       region         = "us-west-2"
       dynamodb_table = "terraform-state-locking"
@@ -19,7 +19,6 @@
     }
   }
 }
-*/
 
 
 provider "aws" {
