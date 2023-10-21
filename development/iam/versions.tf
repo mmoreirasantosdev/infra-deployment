@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "challenge-devops-tf-state"
-    key            = "challenge/devops/development/terraform.tfstate"
+    key            = "challenge/devops/development/iam.tfstate"
     region         = "us-west-2"
     dynamodb_table = "terraform-state-locking"
     encrypt        = true
