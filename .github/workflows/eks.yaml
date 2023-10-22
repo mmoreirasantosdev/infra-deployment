@@ -35,5 +35,5 @@ jobs:
         run: |
           cd development
           terraform init
-          terrform validate
+          terraform validate
           terraform plan
