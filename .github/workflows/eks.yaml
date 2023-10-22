@@ -1,26 +1,18 @@
 name: 'Terraform CI'
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - development/**
-
-  pull_request:
-    paths:
-      - development/**
+  workflow_dispatch:
+    inputs:
+      ec2-name:
+        description: EKS name
+        required: true
+        default: 'App Server'
+        type: string
 
 jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: development
-        shell: bash
-
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
