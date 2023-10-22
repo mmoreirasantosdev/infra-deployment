@@ -33,4 +33,5 @@ jobs:
         env:
           TF_VAR_eks_name:  "${{ github.event.inputs.eks-name }}"
         run: |
+          cd development
           ls
