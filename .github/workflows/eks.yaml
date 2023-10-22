@@ -29,21 +29,21 @@ jobs:
         with:
           terraform_wrapper: false
       - name: Terraform Init
+        working-directory: ./development
         id: init
         env:
           TF_VAR_eks_name:  "${{ github.event.inputs.eks-name }}"
         run: |
-          cd development
           terraform init
 
       - name: Terraform Validate
+        working-directory: ./development
         id: validate
         run: |
-          cd development
           terraform validate
 
       - name: Terraform Plan
+        working-directory: ./development
         id: plan
         run: |
-          cd development
           terraform plan
