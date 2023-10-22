@@ -28,12 +28,20 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_wrapper: false
-      - name: Terraform Apply
-        id: apply
+      - name: Terraform Init
+        id: init
         env:
           TF_VAR_eks_name:  "${{ github.event.inputs.eks-name }}"
         run: |
           cd development
           terraform init
+
+      - name: Terraform Validate
+        id: validate
+        run: |
           terraform validate
+
+      - name: Terraform Plan
+        id: plan
+        run: |
           terraform plan
