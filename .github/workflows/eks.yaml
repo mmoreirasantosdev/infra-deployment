@@ -47,3 +47,8 @@ jobs:
         id: plan
         run: |
           terraform plan
+      - name: Terraform Plan
+        working-directory: ./development
+        id: apply
+        run: |
+          terraform apply -auto-approve
