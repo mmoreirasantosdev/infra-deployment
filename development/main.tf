@@ -91,7 +91,7 @@ module "eks" {
   }
 }
 
-/*resource "aws_iam_policy" "worker_policy" {
+resource "aws_iam_policy" "worker_policy" {
   name        = "worker-policy"
   description = "Worker policy for the ALB Ingress"
 
@@ -104,6 +104,8 @@ resource "aws_iam_role_policy_attachment" "additional" {
   policy_arn = aws_iam_policy.worker_policy.arn
   role       = each.value.iam_role_name
 }
+
+/*
 
 provider "helm" {
   kubernetes {
