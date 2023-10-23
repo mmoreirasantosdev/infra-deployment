@@ -91,7 +91,7 @@ module "eks" {
   }
 }
 
-resource "aws_iam_policy" "worker_policy" {
+/*resource "aws_iam_policy" "worker_policy" {
   name        = "worker-policy"
   description = "Worker policy for the ALB Ingress"
 
@@ -132,3 +132,5 @@ resource "helm_release" "ingress" {
     value = local.cluster_name
   }
 }
+
+*/
